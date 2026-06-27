@@ -176,7 +176,7 @@ export const TEAM = [
 ]
 
 export const CONTACT = {
-  email: 'team@ethack.ch',
+  email: 'info@ethack.ch',
   instagram: 'https://instagram.com/ethack',
   linkedin: 'https://linkedin.com/company/ethack',
   address: 'ETH Zürich, Rämistrasse 101, 8092 Zürich, Switzerland',
