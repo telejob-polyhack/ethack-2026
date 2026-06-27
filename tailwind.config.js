@@ -16,6 +16,9 @@ export default {
         line: '#21404F',
         gold: '#D4AF6A',
         'gold-soft': '#EAD9B0',
+        platinum: '#C9D2D8',
+        'platinum-soft': '#EFF3F5',
+        'platinum-deep': '#8C99A1',
       },
       fontFamily: {
         display: ['"Space Grotesk"', 'sans-serif'],
@@ -27,6 +30,7 @@ export default {
         'brand-gradient-v': 'linear-gradient(180deg, #99CAD5 0%, #4D81A7 100%)',
         'ember-gradient': 'linear-gradient(135deg, #F2A65A 0%, #D6883C 100%)',
         'gold-gradient': 'linear-gradient(135deg, #EAD9B0 0%, #D4AF6A 50%, #9C7A3D 100%)',
+        'platinum-gradient': 'linear-gradient(135deg, #F5F7F8 0%, #C9D2D8 50%, #8C99A1 100%)',
         grid: 'linear-gradient(rgba(153,202,213,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(153,202,213,0.06) 1px, transparent 1px)',
       },
       backgroundSize: {

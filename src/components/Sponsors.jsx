@@ -1,24 +1,20 @@
-import { Check, Download, Mail } from 'lucide-react'
+import { Check, Download } from 'lucide-react'
 import { SPONSOR_TIERS, EVENT } from '../data/content.js'
 
 const TIER_STYLES = {
-  premium: {
-    card: 'border-paper-dim/30 bg-[#11181f] shadow-[0_0_0_1px_rgba(212,175,106,0.18),0_30px_60px_-30px_rgba(0,0,0,0.6)]',
-    badge: 'bg-gold-gradient text-ink',
-    heading: 'text-gold-soft',
-    check: 'text-gold',
+  platinum: {
+    card: 'border-paper-dim/30 bg-[#11181f] shadow-[0_0_0_1px_rgba(201,210,216,0.18),0_30px_60px_-30px_rgba(0,0,0,0.6)]',
+    badge: 'bg-platinum-gradient text-ink',
+    heading: 'text-platinum-soft',
+    price: 'text-paper',
+    check: 'text-platinum',
   },
   gold: {
     card: 'border-line bg-ink-soft',
-    badge: 'bg-brand-gradient text-ink',
+    badge: 'bg-gold-gradient text-ink',
     heading: 'text-paper',
-    check: 'text-sky',
-  },
-  community: {
-    card: 'border-line/70 bg-ink-soft/40',
-    badge: 'border border-line text-paper-dim',
-    heading: 'text-paper',
-    check: 'text-ember',
+    price: 'text-paper',
+    check: 'text-gold',
   },
 }
 
@@ -38,7 +34,7 @@ export default function Sponsors() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2">
           {SPONSOR_TIERS.map((tier) => {
             const style = TIER_STYLES[tier.style]
             return (
@@ -46,14 +42,25 @@ export default function Sponsors() {
                 key={tier.id}
                 className={`flex flex-col rounded-2xl border p-7 ${style.card}`}
               >
-                <span
-                  className={`eyebrow inline-flex w-fit items-center rounded-full px-3 py-1 text-[10px] ${style.badge}`}
-                >
-                  {tier.name}
-                </span>
-                <h3 className={`mt-4 font-display text-xl font-semibold ${style.heading}`}>
+                <div className="flex items-start justify-between gap-3">
+                  <span
+                    className={`eyebrow inline-flex w-fit items-center rounded-full px-3 py-1 text-[10px] ${style.badge}`}
+                  >
+                    {tier.name}
+                  </span>
+                  {tier.note && (
+                    <span className="eyebrow text-[10px] text-ember">{tier.note}</span>
+                  )}
+                </div>
+
+                <p className={`mt-5 font-display text-3xl font-semibold ${style.price}`}>
+                  {tier.price}
+                </p>
+
+                <h3 className={`mt-2 font-display text-base font-medium ${style.heading}`}>
                   {tier.tagline}
                 </h3>
+
                 <ul className="mt-6 flex-1 space-y-3">
                   {tier.perks.map((perk) => (
                     <li key={perk} className="flex items-start gap-2.5 text-sm text-paper-dim">
@@ -62,13 +69,6 @@ export default function Sponsors() {
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="#contact"
-                  className="mt-7 inline-flex items-center justify-center gap-2 rounded-full border border-line py-2.5 font-display text-sm font-semibold text-paper transition-colors hover:border-sky hover:text-sky"
-                >
-                  <Mail size={15} />
-                  Discuss this tier
-                </a>
               </div>
             )
           })}
@@ -76,7 +76,7 @@ export default function Sponsors() {
 
         <div className="mt-10 flex flex-col items-start justify-between gap-4 rounded-2xl border border-line bg-ink-soft/50 p-6 sm:flex-row sm:items-center">
           <p className="text-sm text-paper-dim">
-            Want the full breakdown, with pricing and past sponsor results?
+            Want the full breakdown, with pricing and custom add-ons?
           </p>
           <a
             href={EVENT.sponsorDeckUrl}

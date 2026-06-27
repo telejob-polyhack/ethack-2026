@@ -51,45 +51,38 @@ export const TRACKS = [
   },
 ]
 
-// Two tiers as established for sponsorship outreach: Premium and Gold.
-// A lighter, non-financial "Community" tier is included for in-kind partners.
+// Tiers, pricing, and perks below match the official sponsorship deck
+// (ethack-2026-sponsorship-deck.pdf-v1.pdf, "Sponsorship Packages" page).
+// Keep this in sync if the deck changes.
 export const SPONSOR_TIERS = [
   {
-    id: 'premium',
-    name: 'Premium',
-    tagline: 'Top-tier visibility and the deepest access to our hackers.',
-    style: 'premium',
+    id: 'platinum',
+    name: 'Platinum',
+    price: 'CHF 10,000',
+    note: 'Limited spots',
+    tagline: 'Set the challenge, judge the finals, own the room.',
+    style: 'platinum',
     perks: [
-      'Top placement of your logo on the website, stage, and all event signage',
-      'Dedicated booth in the main hacking hall for both days',
-      'Opening or closing ceremony speaking slot',
-      'First pick of judging or mentoring slots',
-      'Resume book and direct intros to top-performing teams',
-      'A sponsor-branded challenge with its own prize',
+      'Set a challenge around your own data, code, or tools',
+      'Large logo placement on event material',
+      'A booth at the event',
+      'Host a talk at the opening ceremony',
+      '2 job listings on ETH Get Hired, including a VIP slot',
+      'A seat on the jury for the final pitches',
+      "Participant resumes, with an expected 90% opt-in",
     ],
   },
   {
     id: 'gold',
     name: 'Gold',
+    price: 'CHF 5,000',
     tagline: 'Strong visibility with hands-on access to participants.',
     style: 'gold',
     perks: [
-      'Logo on the website, stage, and event signage',
-      'Shared booth space in the main hacking hall',
-      'Mentoring and judging slots',
-      'Resume book access',
-      'Swag distribution to all 100 participants',
-    ],
-  },
-  {
-    id: 'community',
-    name: 'Community',
-    tagline: 'For in-kind partners: food, venue, tools, and prizes.',
-    style: 'community',
-    perks: [
-      'Logo on the website and event signage',
-      'Recognition during opening and closing ceremonies',
-      'A great way to support students without a cash sponsorship',
+      'Small logo placement on event material',
+      'A booth at the event',
+      'Host a talk during the event',
+      '1 job listing on ETH Get Hired',
     ],
   },
 ]
@@ -172,8 +165,8 @@ export const FAQS = [
 // Placeholder organizing team. Replace names, roles, and photos with the
 // real ETHack 2026 team before publishing.
 export const TEAM = [
-  { name: 'Add your name', role: 'President', photo: null },
-  { name: 'Add your name', role: 'Vice-President', photo: null },
+  { name: 'Add your name', role: 'Co-President', photo: null },
+  { name: 'Add your name', role: 'Co-President', photo: null },
   { name: 'Add your name', role: 'Sponsorship Lead', photo: null },
   { name: 'Add your name', role: 'Logistics Lead', photo: null },
   { name: 'Add your name', role: 'Tech & Platform Lead', photo: null },
@@ -186,5 +179,5 @@ export const CONTACT = {
   email: 'team@ethack.ch',
   instagram: 'https://instagram.com/ethack',
   linkedin: 'https://linkedin.com/company/ethack',
-  address: 'ETH Zürich, SOL B6 Sonneggstrasse 33, 8092 Zürich, Switzerland',
+  address: 'ETH Zürich, Rämistrasse 101, 8092 Zürich, Switzerland',
 }
