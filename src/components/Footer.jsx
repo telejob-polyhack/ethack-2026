@@ -4,10 +4,17 @@ export default function Footer() {
   return (
     <footer className="border-t border-line bg-ink py-10">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-5 text-center md:flex-row md:justify-between md:px-8 md:text-left">
-        <div className="flex items-center gap-2.5">
-          <img src="/logo.svg" alt="" className="h-6 w-6" aria-hidden="true" />
+        <div className="flex items-center gap-2">
+          <div className="h-5 w-[68px] shrink-0">
+            <img
+              src="/logo_colored.png"
+              alt=""
+              aria-hidden="true"
+              className="h-full w-full object-contain"
+            />
+          </div>
           <span className="font-display text-sm font-semibold text-paper">
-            {EVENT.name} · {EVENT.location}
+            <span className="text-sky">/26</span> · {EVENT.location}
           </span>
         </div>
 

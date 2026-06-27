@@ -41,8 +41,8 @@ src/
     Footer.jsx
   App.jsx              // assembles sections, owns scroll-spy logic
 public/
-  logo.svg             // the ET monogram supplied for the brand
-  ethack-2026-sponsorship-deck.pdf   // PLACEHOLDER — replace before launch
+  logo_colored.png             // the ETHack monogram supplied for the brand
+  ethack-2026-sponsorship-deck-v1.pdf   // 
 ```
 
 ## Things to replace before launch

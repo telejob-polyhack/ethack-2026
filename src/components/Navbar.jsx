@@ -13,12 +13,20 @@ export default function Navbar({ activeSection }) {
       >
         <a
           href="#home"
-          className="flex items-center gap-2.5 shrink-0"
+          className="flex items-center gap-1.5 shrink-0"
           aria-label="ETHack 2026, back to top"
         >
-          <img src="/logo.svg" alt="" className="h-8 w-8" aria-hidden="true" />
-          <span className="font-display text-lg font-semibold tracking-tight text-paper">
-            ETHack<span className="text-sky">/</span>26
+          {/* logo_colored.png is a wide wordmark (3000x900, ratio ~3.33:1).
+              Only constrain height and let width follow automatically, or
+              the browser will stretch it to fit a square box. */}
+          <img
+            src="/logo_colored.png"
+            alt=""
+            aria-hidden="true"
+            className="h-6 w-auto sm:h-7"
+          />
+          <span className="font-display text-lg font-semibold tracking-tight text-sky">
+            /26
           </span>
         </a>
 

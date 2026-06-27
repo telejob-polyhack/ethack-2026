@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react'
-import { EVENT, STATS, TRACKS } from '../data/content.js'
+import { EVENT, STATS } from '../data/content.js'
 
 export default function Home() {
   return (
@@ -61,11 +61,11 @@ export default function Home() {
           </div>
 
           <div className="relative hidden justify-self-center lg:flex">
-            <div className="animate-floatSlow">
+            <div className="w-72 animate-floatSlow sm:w-80">
               <img
-                src="/logo.svg"
-                alt="ETHack 2026 monogram"
-                className="h-64 w-64 drop-shadow-[0_0_60px_rgba(77,129,167,0.35)]"
+                src="/logo_colored.png"
+                alt="ETHack 2026"
+                className="h-auto w-full drop-shadow-[0_0_60px_rgba(77,129,167,0.35)]"
               />
             </div>
           </div>
@@ -80,24 +80,7 @@ export default function Home() {
             Over one weekend, teams turn ideas into working prototypes,
             collaborate across disciplines, and present to a jury that
             awards prizes to the most promising and impactful creations.
-            Pick a track below, or bring a problem of your own.
           </p>
-
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {TRACKS.map((track) => (
-              <div
-                key={track.title}
-                className="rounded-2xl border border-line bg-ink-soft/60 p-6 transition-colors hover:border-steel"
-              >
-                <h3 className="font-display text-lg font-semibold text-paper">
-                  {track.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-paper-dim">
-                  {track.description}
-                </p>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

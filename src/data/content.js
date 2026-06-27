@@ -18,7 +18,7 @@ export const EVENT = {
   dateShort: 'Sep 12–13',
   location: 'ETH Zürich',
   applyUrl: '#contact',
-  sponsorDeckUrl: '/ethack-2026-sponsorship-deck.pdf',
+  sponsorDeckUrl: '/ethack-2026-sponsorship-deck-v1.pdf',
 }
 
 export const STATS = [
@@ -172,8 +172,8 @@ export const FAQS = [
 // Placeholder organizing team. Replace names, roles, and photos with the
 // real ETHack 2026 team before publishing.
 export const TEAM = [
-  { name: 'Add your name', role: 'Co-President', photo: null },
-  { name: 'Add your name', role: 'Co-President', photo: null },
+  { name: 'Add your name', role: 'President', photo: null },
+  { name: 'Add your name', role: 'Vice-President', photo: null },
   { name: 'Add your name', role: 'Sponsorship Lead', photo: null },
   { name: 'Add your name', role: 'Logistics Lead', photo: null },
   { name: 'Add your name', role: 'Tech & Platform Lead', photo: null },
@@ -186,5 +186,5 @@ export const CONTACT = {
   email: 'team@ethack.ch',
   instagram: 'https://instagram.com/ethack',
   linkedin: 'https://linkedin.com/company/ethack',
-  address: 'ETH Zürich, Rämistrasse 101, 8092 Zürich, Switzerland',
+  address: 'ETH Zürich, SOL B6 Sonneggstrasse 33, 8092 Zürich, Switzerland',
 }
