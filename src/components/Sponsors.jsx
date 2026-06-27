@@ -4,17 +4,17 @@ import { SPONSOR_TIERS, EVENT } from '../data/content.js'
 const TIER_STYLES = {
   platinum: {
     card: 'border-paper-dim/30 bg-[#11181f] shadow-[0_0_0_1px_rgba(201,210,216,0.18),0_30px_60px_-30px_rgba(0,0,0,0.6)]',
-    badge: 'bg-platinum-gradient text-ink',
-    heading: 'text-platinum-soft',
+    badge: 'bg-[linear-gradient(135deg,#F5F7F8_0%,#C9D2D8_50%,#8C99A1_100%)] text-[#0F1D26]',
+    heading: 'text-[#EFF3F5]',
     price: 'text-paper',
-    check: 'text-platinum',
+    check: 'text-[#C9D2D8]',
   },
   gold: {
     card: 'border-line bg-ink-soft',
-    badge: 'bg-gold-gradient text-ink',
+    badge: 'bg-[linear-gradient(135deg,#EAD9B0_0%,#D4AF6A_50%,#9C7A3D_100%)] text-[#0F1D26]',
     heading: 'text-paper',
     price: 'text-paper',
-    check: 'text-gold',
+    check: 'text-[#D4AF6A]',
   },
 }
 
