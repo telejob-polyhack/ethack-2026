@@ -49,6 +49,8 @@ export default function Navbar({ activeSection }) {
 
         <a
           href={EVENT.applyUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden rounded-full bg-brand-gradient px-5 py-2 font-display text-sm font-semibold text-ink shadow-lg shadow-steel/20 transition-transform hover:scale-[1.03] md:inline-block"
         >
           Apply to hack
@@ -86,6 +88,8 @@ export default function Navbar({ activeSection }) {
             <li className="pt-2">
               <a
                 href={EVENT.applyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
                 className="block rounded-full bg-brand-gradient px-5 py-2.5 text-center font-display text-sm font-semibold text-ink"
               >

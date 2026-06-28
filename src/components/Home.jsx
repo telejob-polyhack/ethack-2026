@@ -32,7 +32,9 @@ export default function Home() {
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <a
-                href="#contact"
+                href={EVENT.applyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-brand-gradient px-6 py-3 font-display text-sm font-semibold text-ink shadow-lg shadow-steel/25 transition-transform hover:scale-[1.03]"
               >
                 Apply to hack

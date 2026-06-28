@@ -17,8 +17,8 @@ export const EVENT = {
   dateLong: 'September 12–13, 2026',
   dateShort: 'Sep 12–13',
   location: 'ETH Zürich',
-  applyUrl: '#contact',
-  sponsorDeckUrl: '/ethack-2026-sponsorship-deck-v1.pdf',
+  applyUrl: 'https://forms.gle/gf9dU4BYMYE9NoCb9',
+  sponsorDeckUrl: '/ethack-2026-sponsorship-deck.pdf-v1.pdf',
 }
 
 export const STATS = [
@@ -92,29 +92,22 @@ export const AGENDA = [
     day: 'Day 1',
     date: 'Saturday, September 12',
     items: [
-      { time: '08:00', title: 'Registration & breakfast' },
-      { time: '09:30', title: 'Opening ceremony' },
-      { time: '10:30', title: 'Team formation & ideation' },
-      { time: '11:30', title: 'Hacking begins', emphasis: true },
-      { time: '13:00', title: 'Lunch' },
-      { time: '16:00', title: 'Sponsor workshops & tech talks' },
-      { time: '19:00', title: 'Dinner' },
-      { time: '22:00', title: 'Mentor office hours' },
-      { time: '00:00', title: 'Midnight snack' },
+      { time: '10:00–10:30', title: 'Registration' },
+      { time: '10:30–12:00', title: 'Opening Ceremony' },
+      { time: '12:00', title: 'Start of hacking', emphasis: true },
+      { time: '12:00–13:30', title: 'Networking Lunch' },
+      { time: '14:30', title: 'Partner Talks' },
+      { time: '18:00–20:00', title: 'Networking Dinner' },
     ],
   },
   {
     day: 'Day 2',
     date: 'Sunday, September 13',
     items: [
-      { time: '06:00', title: 'Early breakfast for the night owls' },
-      { time: '09:00', title: 'Final-stretch coffee & breakfast' },
-      { time: '11:30', title: 'Hacking ends, submissions close', emphasis: true },
-      { time: '12:00', title: 'Lunch & project expo' },
-      { time: '13:30', title: 'Judging' },
-      { time: '15:30', title: 'Top-team presentations' },
-      { time: '16:30', title: 'Awards ceremony', emphasis: true },
-      { time: '17:30', title: 'Closing & networking' },
+      { time: '07:00–09:00', title: 'Breakfast' },
+      { time: '12:00–13:00', title: 'Celebration Lunch' },
+      { time: '13:00–14:30', title: 'Judging x Panel' },
+      { time: '14:30–15:30', title: 'Closing Ceremony', emphasis: true },
     ],
   },
 ]
@@ -162,22 +155,18 @@ export const FAQS = [
   },
 ]
 
-// Placeholder organizing team. Replace names, roles, and photos with the
-// real ETHack 2026 team before publishing.
 export const TEAM = [
-  { name: 'Add your name', role: 'Co-President', photo: null },
-  { name: 'Add your name', role: 'Co-President', photo: null },
-  { name: 'Add your name', role: 'Sponsorship Lead', photo: null },
-  { name: 'Add your name', role: 'Logistics Lead', photo: null },
-  { name: 'Add your name', role: 'Tech & Platform Lead', photo: null },
-  { name: 'Add your name', role: 'Marketing Lead', photo: null },
-  { name: 'Add your name', role: 'Participant Experience Lead', photo: null },
-  { name: 'Add your name', role: 'Design Lead', photo: null },
+  { name: 'Luca Ferrari', role: 'President', photo: null },
+  { name: 'Angela Ng', role: 'Vice-President', photo: null },
+  { name: 'Michael Wenger', role: 'Treasurer', photo: null },
+  { name: 'Armout Devos', role: 'Advisor', photo: null },
+  { name: 'Mohid Fayaz Mir', role: 'Team Member', photo: null },
+  { name: 'Jenestin Anthonipillai', role: 'Team Member', photo: null },
 ]
 
 export const CONTACT = {
-  email: 'info@ethack.ch',
+  email: 'team@ethack.ch',
   instagram: 'https://instagram.com/ethack',
   linkedin: 'https://linkedin.com/company/ethack',
-  address: 'ETH Zürich, Rämistrasse 101, 8092 Zürich, Switzerland',
+  address: 'ETH Zürich, SOL B6 Sonneggstrasse 33, 8092 Zürich, Switzerland',
 }

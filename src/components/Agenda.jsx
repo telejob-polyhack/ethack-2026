@@ -27,7 +27,7 @@ export default function Agenda() {
 
               <ol className="relative border-l border-line pl-6">
                 {day.items.map((item) => (
-                  <li key={item.time} className="relative pb-7 last:pb-0">
+                  <li key={item.title} className="relative pb-7 last:pb-0">
                     <span
                       className={`absolute -left-[29px] top-1 block h-3 w-3 rounded-full border-2 border-ink ${
                         item.emphasis ? 'bg-ember' : 'bg-steel'
