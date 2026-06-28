@@ -23,9 +23,9 @@ export const EVENT = {
 
 export const STATS = [
   { value: '100', label: 'students selected' },
-  { value: '24', label: 'hours, start to finish' },
+  { value: '24', label: 'hours of hacking' },
   { value: '1', label: 'theme: hack for good' },
-  { value: '4+', label: 'tracks to build in' },
+  { value: '3+', label: 'challenges to build in' },
 ]
 
 export const TRACKS = [
