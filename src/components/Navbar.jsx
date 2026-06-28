@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { NAV_LINKS, EVENT } from '../data/content.js'
+import { goToSection } from '../lib/navigation.js'
 
 export default function Navbar({ activeSection }) {
   const [open, setOpen] = useState(false)
@@ -12,7 +13,11 @@ export default function Navbar({ activeSection }) {
         aria-label="Primary"
       >
         <a
-          href="#home"
+          href="/"
+          onClick={(e) => {
+            e.preventDefault()
+            goToSection('home')
+          }}
           className="flex items-center gap-1.5 shrink-0"
           aria-label="ETHack 2026, back to top"
         >
@@ -34,7 +39,15 @@ export default function Navbar({ activeSection }) {
           {NAV_LINKS.map((link) => (
             <li key={link.id}>
               <a
-                href={`#${link.id}`}
+                href={link.id === 'home' ? '/' : `#${link.id}`}
+                onClick={
+                  link.id === 'home'
+                    ? (e) => {
+                        e.preventDefault()
+                        goToSection('home')
+                      }
+                    : undefined
+                }
                 className={`eyebrow text-[11px] transition-colors ${
                   activeSection === link.id
                     ? 'text-sky'
@@ -73,8 +86,14 @@ export default function Navbar({ activeSection }) {
             {NAV_LINKS.map((link) => (
               <li key={link.id}>
                 <a
-                  href={`#${link.id}`}
-                  onClick={() => setOpen(false)}
+                  href={link.id === 'home' ? '/' : `#${link.id}`}
+                  onClick={(e) => {
+                    if (link.id === 'home') {
+                      e.preventDefault()
+                      goToSection('home')
+                    }
+                    setOpen(false)
+                  }}
                   className={`block rounded-md px-2 py-2.5 font-body text-base ${
                     activeSection === link.id
                       ? 'text-sky'

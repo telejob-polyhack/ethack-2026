@@ -27,9 +27,19 @@ export default function Team() {
         <div className="mt-14 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
           {TEAM.map((member, i) => (
             <div key={`${member.name}-${i}`} className="group text-center">
-              <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-brand-gradient font-display text-xl font-semibold text-ink transition-transform group-hover:scale-105 sm:h-28 sm:w-28">
-                {initials(member.name) || 'ET'}
-              </div>
+              {member.photo ? (
+                <div className="mx-auto h-24 w-24 overflow-hidden rounded-full transition-transform group-hover:scale-105 sm:h-28 sm:w-28">
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              ) : (
+                <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-brand-gradient font-display text-xl font-semibold text-ink transition-transform group-hover:scale-105 sm:h-28 sm:w-28">
+                  {initials(member.name) || 'ET'}
+                </div>
+              )}
               <p className="mt-4 font-display text-sm font-semibold text-paper sm:text-base">
                 {member.name}
               </p>

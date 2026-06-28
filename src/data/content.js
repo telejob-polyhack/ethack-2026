@@ -156,12 +156,12 @@ export const FAQS = [
 ]
 
 export const TEAM = [
-  { name: 'Luca Ferrari', role: 'President', photo: null },
-  { name: 'Angela Ng', role: 'Vice-President', photo: null },
-  { name: 'Michael Wenger', role: 'Treasurer', photo: null },
-  { name: 'Armout Devos', role: 'Advisor', photo: null },
-  { name: 'Mohid Fayaz Mir', role: 'Team Member', photo: null },
-  { name: 'Jenestin Anthonipillai', role: 'Team Member', photo: null },
+  { name: 'Luca Ferrari', role: 'President', photo: '/team_luca.png' },
+  { name: 'Angela Ng', role: 'Vice-President', photo: '/team_angela.jpg' },
+  { name: 'Michael Wenger', role: 'Treasurer', photo: '/team_michael.jpg' },
+  { name: 'Armout Devos', role: 'Advisor', photo: '/team_arnout.jpg' },
+  { name: 'Mohid Fayaz Mir', role: 'Team Member', photo: '/team_mohid.jpg' },
+  { name: 'Jenestin Anthonipillai', role: 'Team Member', photo: '/team_jenestin.jpg' },
 ]
 
 export const CONTACT = {

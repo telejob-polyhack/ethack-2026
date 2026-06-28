@@ -4,7 +4,6 @@ import { EVENT, STATS } from '../data/content.js'
 export default function Home() {
   return (
     <section id="home" className="relative overflow-hidden border-b border-line">
-      <div className="grid-bg absolute inset-0 opacity-90" />
       <div className="pointer-events-none absolute -top-24 right-[-10%] h-[480px] w-[480px] rounded-full bg-steel/20 blur-[120px]" />
       <div className="pointer-events-none absolute bottom-0 left-[-10%] h-[380px] w-[380px] rounded-full bg-ember/10 blur-[110px]" />
 
@@ -65,7 +64,7 @@ export default function Home() {
           <div className="relative hidden justify-self-center lg:flex">
             <div className="w-72 animate-floatSlow sm:w-80">
               <img
-                src="/logo_colored.png"
+                src="/logo_white.png"
                 alt="ETHack 2026"
                 className="h-auto w-full drop-shadow-[0_0_60px_rgba(77,129,167,0.35)]"
               />

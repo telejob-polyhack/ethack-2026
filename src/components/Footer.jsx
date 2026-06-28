@@ -1,4 +1,5 @@
 import { NAV_LINKS, EVENT } from '../data/content.js'
+import { goToSection } from '../lib/navigation.js'
 
 export default function Footer() {
   return (
@@ -22,7 +23,15 @@ export default function Footer() {
           {NAV_LINKS.map((link) => (
             <li key={link.id}>
               <a
-                href={`#${link.id}`}
+                href={link.id === 'home' ? '/' : `#${link.id}`}
+                onClick={
+                  link.id === 'home'
+                    ? (e) => {
+                        e.preventDefault()
+                        goToSection('home')
+                      }
+                    : undefined
+                }
                 className="font-mono text-xs uppercase tracking-wide text-paper-dim hover:text-sky"
               >
                 {link.label}

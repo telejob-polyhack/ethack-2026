@@ -26,9 +26,10 @@ export default function App() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id)
-            const nextHash = `#${entry.target.id}`
+            const nextHash = entry.target.id === 'home' ? '' : `#${entry.target.id}`
             if (window.location.hash !== nextHash) {
-              window.history.replaceState(null, '', nextHash)
+              const base = window.location.pathname + window.location.search
+              window.history.replaceState(null, '', nextHash ? `${base}${nextHash}` : base)
             }
           }
         })
@@ -56,15 +57,22 @@ export default function App() {
     <div className="min-h-screen bg-ink font-body text-paper">
       <Navbar activeSection={activeSection} />
       <CircuitRail activeSection={activeSection} progress={progress} />
-      <main>
-        <Home />
-        <Sponsors />
-        <Agenda />
-        <FAQs />
-        <Team />
-        <Contact />
-      </main>
-      <Footer />
+      {/* The circuit rail is fixed near the left edge and only shows at the
+          lg breakpoint, so reserve some room for it there specifically —
+          otherwise it crowds page content on screens just past 1024px,
+          before the centered max-w-7xl container's own margins grow large
+          enough to clear it on their own. */}
+      <div className="lg:pl-28">
+        <main>
+          <Home />
+          <Sponsors />
+          <Agenda />
+          <FAQs />
+          <Team />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </div>
   )
 }
