@@ -44,8 +44,9 @@ export default function Team() {
                 {member.name}
               </p>
               <p className="mt-1 font-mono text-[11px] uppercase tracking-wide text-paper-dim">
-                {member.role}
+                {member.designation}
               </p>
+              <p className="mt-0.5 text-xs text-sky">{member.field}</p>
             </div>
           ))}
         </div>

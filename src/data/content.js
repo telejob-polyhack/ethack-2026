@@ -23,9 +23,9 @@ export const EVENT = {
 
 export const STATS = [
   { value: '100', label: 'students selected' },
-  { value: '24', label: 'hours of hacking' },
+  { value: '24', label: 'hours, start to finish' },
   { value: '1', label: 'theme: hack for good' },
-  { value: '3+', label: 'challenges to build in' },
+  { value: '4+', label: 'tracks to build in' },
 ]
 
 export const TRACKS = [
@@ -156,17 +156,45 @@ export const FAQS = [
 ]
 
 export const TEAM = [
-  { name: 'Luca Ferrari', role: 'President', photo: '/team_luca.png' },
-  { name: 'Angela Ng', role: 'Vice-President', photo: '/team_angela.jpg' },
-  { name: 'Michael Wenger', role: 'Treasurer', photo: '/team_michael.jpg' },
-  { name: 'Armout Devos', role: 'Advisor', photo: '/team_arnout.jpg' },
-  { name: 'Mohid Fayaz Mir', role: 'Team Member', photo: '/team_mohid.jpg' },
-  { name: 'Jenestin Anthonipillai', role: 'Team Member', photo: '/team_jenestin.jpg' },
+  {
+    name: 'Luca Ferrari',
+    designation: 'Doctoral Student',
+    field: 'Environmental Science',
+    photo: '/team_luca.png',
+  },
+  {
+    name: 'Angela Ng',
+    designation: 'Doctoral Student',
+    field: 'Neuropsychology',
+    photo: '/team_angela.jpg',
+  },
+  {
+    name: 'Michael Wenger',
+    designation: 'Doctoral Student',
+    field: 'Solid State Physics',
+    photo: '/team_michael.jpg',
+  },
+  {
+    name: 'Arnout Devos',
+    designation: 'Established Researcher',
+    field: 'ETH AI Center',
+    photo: '/team_arnout.jpg',
+  },
+  {
+    name: 'Mohid Fayaz Mir',
+    designation: 'Doctoral Student',
+    field: 'Weather and Climate Risks',
+    photo: '/team_mohid.jpg',
+  },
+  {
+    name: 'Jenestin Anthonipillai',
+    designation: 'Doctoral Student',
+    field: 'AI and Biomedical Engineering',
+    photo: '/team_jenestin.jpg',
+  },
 ]
 
 export const CONTACT = {
-  email: 'team@ethack.ch',
-  instagram: 'https://instagram.com/ethack',
-  linkedin: 'https://linkedin.com/company/ethack',
+  email: 'luca.ferrari@usys.ethz.ch',
   address: 'ETH Zürich, SOL B6 Sonneggstrasse 33, 8092 Zürich, Switzerland',
 }

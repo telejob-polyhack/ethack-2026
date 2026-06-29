@@ -1,9 +1,11 @@
 import { useState } from 'react'
-import { Mail, MapPin, Instagram, Linkedin, Send } from 'lucide-react'
+import { Mail, MapPin, Send } from 'lucide-react'
 import { CONTACT } from '../data/content.js'
 
-// The form below is presentational. Wire the onSubmit handler up to a
-// service like Formspree, Getform, or your own backend before launch.
+// Submitting opens the visitor's email client via a mailto: link — there's
+// no backend here. "I'm reaching out about" becomes the subject line, and
+// the message becomes the email body (with the sender's name/email tacked
+// on as a header line, since mailto can't otherwise carry that context).
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
   const [form, setForm] = useState({ name: '', email: '', topic: 'Applying as a hacker', message: '' })
@@ -14,6 +16,14 @@ export default function Contact() {
 
   function handleSubmit(e) {
     e.preventDefault()
+
+    const subject = form.topic
+    const body = [`From: ${form.name} (${form.email})`, '', form.message].join('\n')
+
+    window.location.href = `mailto:${CONTACT.email}?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`
+
     setSubmitted(true)
   }
 
@@ -45,38 +55,26 @@ export default function Contact() {
                 {CONTACT.address}
               </p>
             </div>
-
-            <div>
-              <p className="eyebrow text-[11px] text-paper-dim">Follow along</p>
-              <div className="mt-3 flex gap-3">
-                <a
-                  href={CONTACT.instagram}
-                  className="rounded-full border border-line p-2.5 text-paper-dim transition-colors hover:border-sky hover:text-sky"
-                  aria-label="ETHack on Instagram"
-                >
-                  <Instagram size={18} />
-                </a>
-                <a
-                  href={CONTACT.linkedin}
-                  className="rounded-full border border-line p-2.5 text-paper-dim transition-colors hover:border-sky hover:text-sky"
-                  aria-label="ETHack on LinkedIn"
-                >
-                  <Linkedin size={18} />
-                </a>
-              </div>
-            </div>
           </div>
 
           <div className="rounded-2xl border border-line bg-ink-soft/50 p-6 sm:p-8">
             {submitted ? (
               <div className="flex h-full min-h-[280px] flex-col items-center justify-center text-center">
                 <p className="font-display text-xl font-semibold text-paper">
-                  Message sent.
+                  Opening your email app…
                 </p>
                 <p className="mt-2 max-w-sm text-sm text-paper-dim">
-                  Thanks for reaching out. We read every message and reply
-                  from {CONTACT.email}.
+                  We've drafted a message to {CONTACT.email} with your
+                  details filled in. If nothing opened, you can email us
+                  there directly.
                 </p>
+                <button
+                  type="button"
+                  onClick={() => setSubmitted(false)}
+                  className="mt-5 font-mono text-xs uppercase tracking-wide text-sky hover:text-paper"
+                >
+                  Back to the form
+                </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
