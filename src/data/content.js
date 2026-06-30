@@ -183,7 +183,7 @@ export const TEAM = [
   {
     name: 'Mohid Fayaz Mir',
     designation: 'Doctoral Student',
-    field: 'Weather and Climate Risks',
+    field: 'Hydrology',
     photo: '/team_mohid.jpg',
   },
   {
