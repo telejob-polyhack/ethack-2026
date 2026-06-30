@@ -78,13 +78,21 @@ export default function Sponsors() {
           <p className="text-sm text-paper-dim">
             Want the full breakdown, with pricing and custom add-ons?
           </p>
-          <a
-            href={EVENT.sponsorDeckUrl}
-            className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-brand-gradient px-5 py-2.5 font-display text-sm font-semibold text-ink"
-          >
-            <Download size={15} />
-            Download sponsorship deck
-          </a>
+          <div className="flex flex-wrap items-center gap-3">
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-line px-5 py-2.5 font-display text-sm font-semibold text-paper transition-colors hover:border-sky hover:text-sky"
+            >
+              Contact us
+            </a>
+            <a
+              href={EVENT.sponsorDeckUrl}
+              className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-brand-gradient px-5 py-2.5 font-display text-sm font-semibold text-ink"
+            >
+              <Download size={15} />
+              Download sponsorship deck
+            </a>
+          </div>
         </div>
       </div>
     </section>

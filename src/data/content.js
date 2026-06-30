@@ -195,6 +195,6 @@ export const TEAM = [
 ]
 
 export const CONTACT = {
-  email: 'luca.ferrari@usys.ethz.ch',
+  email: 'info@ethack.ch',
   address: 'ETH Zürich, SOL B6 Sonneggstrasse 33, 8092 Zürich, Switzerland',
 }
