@@ -4,9 +4,18 @@ import { EVENT, STATS } from '../data/content.js'
 export default function Home() {
   return (
     <section id="home" className="relative overflow-hidden border-b border-line">
-      <div className="pointer-events-none absolute -top-24 right-[-10%] h-[480px] w-[480px] rounded-full bg-steel/20 blur-[120px]" />
-      <div className="pointer-events-none absolute bottom-0 left-[-10%] h-[380px] w-[380px] rounded-full bg-ember/10 blur-[110px]" />
-
+      <div
+        className="pointer-events-none absolute -top-24 right-[-10%] h-[480px] w-[480px]"
+        style={{
+          background: 'radial-gradient(circle, rgba(77,129,167,0.20) 0%, transparent 70%)',
+        }}
+      />
+      <div
+        className="pointer-events-none absolute bottom-0 left-[-10%] h-[380px] w-[380px]"
+        style={{
+          background: 'radial-gradient(circle, rgba(215,122,87,0.10) 0%, transparent 70%)',
+        }}
+      />
       <div className="relative mx-auto max-w-7xl px-5 pb-20 pt-36 md:px-8 md:pb-28 md:pt-44">
         <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
