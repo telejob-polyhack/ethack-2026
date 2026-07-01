@@ -26,11 +26,10 @@ export default function CircuitRail({ activeSection, progress }) {
                 type="button"
                 aria-hidden="true"
                 tabIndex={-1}
-                onClick={() =>
-                  document
-                    .getElementById(link.id)
-                    ?.scrollIntoView({ behavior: 'smooth' })
-                }
+                onClick={() => {
+                  const section = document.getElementById(link.id)
+                  if (section) section.scrollIntoView({ behavior: 'smooth' })
+                }}
                 className="group relative -ml-[5px] flex items-center"
               >
                 <span

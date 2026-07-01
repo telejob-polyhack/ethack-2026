@@ -18,7 +18,7 @@ export const EVENT = {
   dateShort: 'Sep 12–13',
   location: 'ETH Zürich',
   applyUrl: 'https://forms.gle/gf9dU4BYMYE9NoCb9',
-  sponsorDeckUrl: '/ethack-2026-sponsorship-deck.pdf-v1.pdf',
+  sponsorDeckUrl: '/ethack-2026-sponsorship-deck-v1.pdf',
 }
 
 export const STATS = [
