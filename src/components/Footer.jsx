@@ -8,9 +8,13 @@ export default function Footer() {
         <div className="flex items-center gap-2">
           <div className="h-5 w-[68px] shrink-0">
             <img
-              src="/logo_colored.png"
+              src="/logo_colored_600.png"
               alt=""
               aria-hidden="true"
+              width="600"
+              height="180"
+              loading="lazy"
+              decoding="async"
               className="h-full w-full object-contain"
             />
           </div>

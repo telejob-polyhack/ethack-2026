@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { NAV_LINKS } from './data/content.js'
 import Navbar from './components/Navbar.jsx'
 import CircuitRail from './components/CircuitRail.jsx'
@@ -20,7 +20,7 @@ function updateSectionHash(id) {
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('home')
-  const [progress, setProgress] = useState(0)
+  const activeSectionRef = useRef('home')
 
   // Keep the active nav item, the circuit rail, and the URL hash in sync
   // with whichever section is currently in view.
@@ -32,6 +32,8 @@ export default function App() {
     if (sections.length === 0) return undefined
 
     function activateSection(id) {
+      if (activeSectionRef.current === id) return
+      activeSectionRef.current = id
       setActiveSection(id)
       updateSectionHash(id)
     }
@@ -75,22 +77,38 @@ export default function App() {
     return () => observer.disconnect()
   }, [])
 
-  // Drive the circuit rail's fill amount off overall scroll position.
+  // Drive the circuit rail through a CSS variable so scrolling does not
+  // re-render the React tree on every frame.
   useEffect(() => {
+    let frame = null
+
     function handleScroll() {
-      const scrollable = document.documentElement.scrollHeight - window.innerHeight
-      const ratio = scrollable > 0 ? window.scrollY / scrollable : 0
-      setProgress(Math.min(1, Math.max(0, ratio)))
+      if (frame !== null) return
+
+      frame = window.requestAnimationFrame(() => {
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight
+        const ratio = scrollable > 0 ? window.scrollY / scrollable : 0
+        document.documentElement.style.setProperty(
+          '--scroll-progress',
+          String(Math.min(1, Math.max(0, ratio))),
+        )
+        frame = null
+      })
     }
+
     handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (frame !== null) window.cancelAnimationFrame(frame)
+    }
   }, [])
 
   return (
     <div className="min-h-screen bg-ink font-body text-paper">
       <Navbar activeSection={activeSection} />
-      <CircuitRail activeSection={activeSection} progress={progress} />
+      <CircuitRail activeSection={activeSection} />
       {/* The circuit rail is fixed near the left edge and only shows at the
           lg breakpoint, so reserve some room for it there specifically —
           otherwise it crowds page content on screens just past 1024px,

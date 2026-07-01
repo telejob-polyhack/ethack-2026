@@ -3,7 +3,7 @@ import { NAV_LINKS } from '../data/content.js'
 // Signature element: a circuit trace running down the side of the page.
 // It fills with the brand gradient as the visitor scrolls, and each node
 // marks a section, echoing the "wiring things together" of a hackathon.
-export default function CircuitRail({ activeSection, progress }) {
+export default function CircuitRail({ activeSection }) {
   return (
     <div
       className="fixed left-5 top-1/2 z-40 hidden -translate-y-1/2 lg:flex"
@@ -12,8 +12,8 @@ export default function CircuitRail({ activeSection, progress }) {
       <div className="relative flex flex-col items-center">
         <div className="relative h-[280px] w-px bg-line">
           <div
-            className="absolute left-0 top-0 w-px bg-brand-gradient-v transition-[height] duration-150"
-            style={{ height: `${progress * 100}%` }}
+            className="absolute left-0 top-0 h-full w-px origin-top bg-brand-gradient-v will-change-transform"
+            style={{ transform: 'scaleY(var(--scroll-progress, 0))' }}
           />
         </div>
 

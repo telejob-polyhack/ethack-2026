@@ -32,6 +32,10 @@ export default function Team() {
                   <img
                     src={member.photo}
                     alt={member.name}
+                    width="480"
+                    height="480"
+                    loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-cover"
                   />
                 </div>

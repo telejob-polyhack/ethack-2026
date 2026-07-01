@@ -4,8 +4,8 @@ import { EVENT, STATS } from '../data/content.js'
 export default function Home() {
   return (
     <section id="home" className="relative overflow-hidden border-b border-line">
-      <div className="pointer-events-none absolute -top-24 right-[-10%] h-[480px] w-[480px] rounded-full bg-steel/20 blur-[120px]" />
-      <div className="pointer-events-none absolute bottom-0 left-[-10%] h-[380px] w-[380px] rounded-full bg-ember/10 blur-[110px]" />
+      <div className="hero-glow hero-glow-steel pointer-events-none absolute -top-24 right-[-10%] h-[480px] w-[480px] rounded-full bg-steel/20 blur-[120px]" />
+      <div className="hero-glow hero-glow-ember pointer-events-none absolute bottom-0 left-[-10%] h-[380px] w-[380px] rounded-full bg-ember/10 blur-[110px]" />
 
       <div className="relative mx-auto max-w-7xl px-5 pb-20 pt-36 md:px-8 md:pb-28 md:pt-44">
         <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
@@ -66,6 +66,9 @@ export default function Home() {
               <img
                 src="/logo_white.png"
                 alt="ETHack 2026"
+                width="3000"
+                height="900"
+                decoding="async"
                 className="h-auto w-full drop-shadow-[0_0_60px_rgba(77,129,167,0.35)]"
               />
             </div>

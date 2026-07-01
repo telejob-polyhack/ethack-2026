@@ -7,7 +7,7 @@ export default function Navbar({ activeSection }) {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-line/70 bg-ink/85 backdrop-blur-md">
+    <header className="nav-glass fixed top-0 left-0 right-0 z-50 border-b border-line/70 bg-ink/85 backdrop-blur-md">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 md:px-8"
         aria-label="Primary"
@@ -25,9 +25,12 @@ export default function Navbar({ activeSection }) {
               Only constrain height and let width follow automatically, or
               the browser will stretch it to fit a square box. */}
           <img
-            src="/logo_colored.png"
+            src="/logo_colored_600.png"
             alt=""
             aria-hidden="true"
+            width="600"
+            height="180"
+            decoding="async"
             className="h-6 w-auto sm:h-7"
           />
           <span className="font-display text-lg font-semibold tracking-tight text-sky">
