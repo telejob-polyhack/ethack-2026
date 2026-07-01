@@ -10,6 +10,14 @@ import Team from './components/Team.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
 
+function updateSectionHash(id) {
+  const nextHash = id === 'home' ? '' : `#${id}`
+  if (window.location.hash !== nextHash) {
+    const base = window.location.pathname + window.location.search
+    window.history.replaceState(null, '', nextHash ? `${base}${nextHash}` : base)
+  }
+}
+
 export default function App() {
   const [activeSection, setActiveSection] = useState('home')
   const [progress, setProgress] = useState(0)
@@ -21,16 +29,42 @@ export default function App() {
       Boolean,
     )
 
+    if (sections.length === 0) return undefined
+
+    function activateSection(id) {
+      setActiveSection(id)
+      updateSectionHash(id)
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      function handleLegacyScrollSpy() {
+        const referenceY = window.innerHeight * 0.4
+        let currentSection = sections[0]
+
+        sections.forEach((section) => {
+          if (section.getBoundingClientRect().top <= referenceY) {
+            currentSection = section
+          }
+        })
+
+        activateSection(currentSection.id)
+      }
+
+      handleLegacyScrollSpy()
+      window.addEventListener('scroll', handleLegacyScrollSpy, { passive: true })
+      window.addEventListener('resize', handleLegacyScrollSpy)
+
+      return () => {
+        window.removeEventListener('scroll', handleLegacyScrollSpy)
+        window.removeEventListener('resize', handleLegacyScrollSpy)
+      }
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveSection(entry.target.id)
-            const nextHash = entry.target.id === 'home' ? '' : `#${entry.target.id}`
-            if (window.location.hash !== nextHash) {
-              const base = window.location.pathname + window.location.search
-              window.history.replaceState(null, '', nextHash ? `${base}${nextHash}` : base)
-            }
+            activateSection(entry.target.id)
           }
         })
       },
