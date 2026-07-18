@@ -17,7 +17,7 @@ export const EVENT = {
   dateLong: 'September 12–13, 2026',
   dateShort: 'Sep 12–13',
   location: 'ETH Zürich',
-  applyUrl: 'https://forms.gle/gf9dU4BYMYE9NoCb9',
+  applyUrl: 'https://luma.com/eypyeily',
   sponsorDeckUrl: '/ethack-2026-sponsorship-deck-v1.pdf',
 }
 
