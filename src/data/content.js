@@ -116,7 +116,7 @@ export const FAQS = [
   {
     question: 'Who can take part?',
     answer:
-      "ETHack is open to students from ETH Zürich and other Swiss and international universities. We select 100 participants from across disciplines, not just computer science, since 'hack for good' needs designers, engineers, scientists, and humanities students working together.",
+      "ETHack is open to students from ETH Zürich and the ETH Domain (ETH Zurich, EPFL, Eawag, WSL, Empa and PSI). We select 100 participants from across disciplines, not just computer science, since 'hack for good' needs designers, engineers, scientists, and humanities students working together.",
   },
   {
     question: 'Do I need to know how to code?',
@@ -165,7 +165,7 @@ export const TEAM = [
   {
     name: 'Angela Ng',
     designation: 'Doctoral Student',
-    field: 'Neuropsychology',
+    field: 'Neuroscience',
     photo: '/team_angela.jpg',
   },
   {

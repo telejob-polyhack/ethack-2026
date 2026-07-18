@@ -84,7 +84,7 @@ export default function Home() {
         <div className="mt-24" id="about-theme">
           <p className="eyebrow text-xs text-ember">The theme</p>
           <h2 className="mt-3 max-w-2xl font-display text-2xl font-semibold text-paper sm:text-3xl">
-            Under "hack for good," every team tackles a real problem.
+            Under "hack for good", every team tackles a real problem.
           </h2>
           <p className="mt-4 max-w-2xl text-paper-dim">
             Over one weekend, teams turn ideas into working prototypes,
