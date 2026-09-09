@@ -4,14 +4,16 @@ import { SPONSOR_TIERS, EVENT } from '../data/content.js'
 const TIER_STYLES = {
   platinum: {
     card: 'border-paper-dim/30 bg-[#11181f] shadow-[0_0_0_1px_rgba(201,210,216,0.18),0_30px_60px_-30px_rgba(0,0,0,0.6)]',
-    badge: 'bg-[linear-gradient(135deg,#F5F7F8_0%,#C9D2D8_50%,#8C99A1_100%)] text-[#0F1D26]',
+    badge:
+      'bg-[linear-gradient(135deg,#F5F7F8_0%,#C9D2D8_50%,#8C99A1_100%)] text-[#0F1D26]',
     heading: 'text-[#EFF3F5]',
     price: 'text-paper',
     check: 'text-[#C9D2D8]',
   },
   gold: {
     card: 'border-line bg-ink-soft',
-    badge: 'bg-[linear-gradient(135deg,#EAD9B0_0%,#D4AF6A_50%,#9C7A3D_100%)] text-[#0F1D26]',
+    badge:
+      'bg-[linear-gradient(135deg,#EAD9B0_0%,#D4AF6A_50%,#9C7A3D_100%)] text-[#0F1D26]',
     heading: 'text-paper',
     price: 'text-paper',
     check: 'text-[#D4AF6A]',
@@ -24,9 +26,11 @@ export default function Sponsors() {
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="max-w-2xl">
           <p className="eyebrow text-xs text-sky">Sponsors</p>
+
           <h2 className="mt-3 font-display text-3xl font-semibold text-paper sm:text-4xl">
             Put your company in front of 100 builders.
           </h2>
+
           <p className="mt-4 text-paper-dim">
             ETHack runs on sponsor support: food, prizes, swag, and the
             mentors who help teams ship. In exchange, you get direct access
@@ -34,9 +38,56 @@ export default function Sponsors() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2">
+        {/* Current sponsors */}
+        <div className="mt-14">
+          {/* Platinum sponsors */}
+          <div>
+            <p className="eyebrow text-xs text-paper-dim">
+              Platinum Sponsors
+            </p>
+
+            <div className="mt-6 flex flex-wrap items-center gap-6">
+              <div className="flex min-h-36 w-full items-center justify-center rounded-2xl border border-paper-dim/30 bg-white p-8 sm:w-80">
+                <img
+                  src="/citadel.png"
+                  alt="Citadel"
+                  className="max-h-20 max-w-full object-contain"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Other sponsors */}
+          <div className="mt-12">
+            <p className="eyebrow text-xs text-paper-dim">
+              Other Sponsors
+            </p>
+
+            <div className="mt-6 flex flex-wrap items-center gap-6">
+              <div className="flex min-h-28 w-full items-center justify-center rounded-2xl border border-line bg-white p-6 sm:w-64">
+                <img
+                  src="/focus_water.svg"
+                  alt="Focuswater"
+                  className="max-h-16 max-w-full object-contain"
+                />
+              </div>
+
+              <div className="flex min-h-28 w-full items-center justify-center rounded-2xl border border-line bg-white p-6 sm:w-64">
+                <img
+                  src="/alba.png"
+                  alt="ALBA"
+                  className="max-h-16 max-w-full object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Sponsorship packages */}
+        <div className="mt-20 grid gap-6 sm:grid-cols-2">
           {SPONSOR_TIERS.map((tier) => {
             const style = TIER_STYLES[tier.style]
+
             return (
               <div
                 key={tier.id}
@@ -48,23 +99,36 @@ export default function Sponsors() {
                   >
                     {tier.name}
                   </span>
+
                   {tier.note && (
-                    <span className="eyebrow text-[10px] text-ember">{tier.note}</span>
+                    <span className="eyebrow text-[10px] text-ember">
+                      {tier.note}
+                    </span>
                   )}
                 </div>
 
-                <p className={`mt-5 font-display text-3xl font-semibold ${style.price}`}>
+                <p
+                  className={`mt-5 font-display text-3xl font-semibold ${style.price}`}
+                >
                   {tier.price}
                 </p>
 
-                <h3 className={`mt-2 font-display text-base font-medium ${style.heading}`}>
+                <h3
+                  className={`mt-2 font-display text-base font-medium ${style.heading}`}
+                >
                   {tier.tagline}
                 </h3>
 
                 <ul className="mt-6 flex-1 space-y-3">
                   {tier.perks.map((perk) => (
-                    <li key={perk} className="flex items-start gap-2.5 text-sm text-paper-dim">
-                      <Check size={16} className={`mt-0.5 shrink-0 ${style.check}`} />
+                    <li
+                      key={perk}
+                      className="flex items-start gap-2.5 text-sm text-paper-dim"
+                    >
+                      <Check
+                        size={16}
+                        className={`mt-0.5 shrink-0 ${style.check}`}
+                      />
                       <span>{perk}</span>
                     </li>
                   ))}
@@ -78,6 +142,7 @@ export default function Sponsors() {
           <p className="text-sm text-paper-dim">
             Want the full breakdown, with pricing and custom add-ons?
           </p>
+
           <div className="flex flex-wrap items-center gap-3">
             <a
               href="#contact"
@@ -85,6 +150,7 @@ export default function Sponsors() {
             >
               Contact us
             </a>
+
             <a
               href={EVENT.sponsorDeckUrl}
               className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-brand-gradient px-5 py-2.5 font-display text-sm font-semibold text-ink"
