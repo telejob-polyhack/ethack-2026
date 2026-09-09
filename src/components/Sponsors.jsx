@@ -46,12 +46,14 @@ export default function Sponsors() {
               Platinum Sponsors
             </p>
 
-            <div className="flex h-40 w-full items-center justify-center rounded-2xl border border-paper-dim/30 bg-white px-8 py-4 sm:w-[640px]">
-              <img
-                src="/citadel.png"
-                alt="Citadel"
-                className="h-auto w-full max-w-[540px] object-contain"
-              />
+            <div className="mt-8 flex flex-wrap items-center gap-6">
+              <div className="flex h-40 w-full items-center justify-center rounded-2xl border border-paper-dim/30 bg-white px-8 py-4 sm:w-[640px]">
+                <img
+                  src="/citadel.png"
+                  alt="Citadel"
+                  className="h-auto w-full max-w-[540px] object-contain"
+                />
+              </div>
             </div>
           </div>
 
@@ -65,7 +67,7 @@ export default function Sponsors() {
               <div className="flex min-h-28 w-full items-center justify-center rounded-2xl border border-line bg-white p-6 sm:w-64">
                 <img
                   src="/focus_water.svg"
-                  alt="Focuswater"
+                  alt="Focus Water"
                   className="max-h-16 max-w-full object-contain"
                 />
               </div>
