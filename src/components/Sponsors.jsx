@@ -46,14 +46,12 @@ export default function Sponsors() {
               Platinum Sponsors
             </p>
 
-            <div className="mt-6 flex flex-wrap items-center gap-6">
-              <div className="flex min-h-36 w-full items-center justify-center rounded-2xl border border-paper-dim/30 bg-white p-8 sm:w-80">
-                <img
-                  src="/citadel.png"
-                  alt="Citadel"
-                  className="max-h-20 max-w-full object-contain"
-                />
-              </div>
+            <div className="flex h-40 w-full items-center justify-center rounded-2xl border border-paper-dim/30 bg-white px-8 py-4 sm:w-[640px]">
+              <img
+                src="/citadel.png"
+                alt="Citadel"
+                className="h-auto w-full max-w-[540px] object-contain"
+              />
             </div>
           </div>
 
