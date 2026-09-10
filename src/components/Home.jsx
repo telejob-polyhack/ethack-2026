@@ -7,15 +7,19 @@ export default function Home() {
       <div
         className="pointer-events-none absolute -top-24 right-[-10%] h-[480px] w-[480px]"
         style={{
-          background: 'radial-gradient(circle, rgba(77,129,167,0.20) 0%, transparent 70%)',
+          background:
+            'radial-gradient(circle, rgba(77,129,167,0.20) 0%, transparent 70%)',
         }}
       />
+
       <div
         className="pointer-events-none absolute bottom-0 left-[-10%] h-[380px] w-[380px]"
         style={{
-          background: 'radial-gradient(circle, rgba(215,122,87,0.10) 0%, transparent 70%)',
+          background:
+            'radial-gradient(circle, rgba(215,122,87,0.10) 0%, transparent 70%)',
         }}
       />
+
       <div className="relative mx-auto max-w-7xl px-5 pb-20 pt-36 md:px-8 md:pb-28 md:pt-44">
         <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
@@ -48,6 +52,7 @@ export default function Home() {
                 Apply to hack
                 <ArrowRight size={16} />
               </a>
+
               <a
                 href="#sponsors"
                 className="inline-flex items-center gap-2 rounded-full border border-line px-6 py-3 font-display text-sm font-semibold text-paper transition-colors hover:border-sky hover:text-sky"
@@ -56,12 +61,20 @@ export default function Home() {
               </a>
             </div>
 
+            {/* Application deadline notice */}
+            <div className="mt-5 max-w-xl rounded-xl border border-sky/40 bg-sky/10 px-5 py-4">
+              <p className="font-display text-sm font-bold text-paper sm:text-base">
+                Applications close September 11 at 12:00 noon.
+              </p>
+            </div>
+
             <dl className="mt-14 grid grid-cols-2 gap-6 sm:grid-cols-4">
               {STATS.map((stat) => (
                 <div key={stat.label} className="border-l border-line pl-4">
                   <dt className="font-display text-3xl font-semibold text-paper">
                     {stat.value}
                   </dt>
+
                   <dd className="mt-1 font-mono text-[11px] uppercase tracking-wide text-paper-dim">
                     {stat.label}
                   </dd>
@@ -83,9 +96,11 @@ export default function Home() {
 
         <div className="mt-24" id="about-theme">
           <p className="eyebrow text-xs text-ember">The theme</p>
+
           <h2 className="mt-3 max-w-2xl font-display text-2xl font-semibold text-paper sm:text-3xl">
             Under "hack for good", every team tackles a real problem.
           </h2>
+
           <p className="mt-4 max-w-2xl text-paper-dim">
             Over one weekend, teams turn ideas into working prototypes,
             collaborate across disciplines, and present to a jury that
