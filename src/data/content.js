@@ -9,8 +9,12 @@ export const NAV_LINKS = [
   { id: 'faqs', label: 'FAQs' },
   { id: 'team', label: 'Team' },
   { id: 'contact', label: 'Contact' },
-  { id: 'event-photos', label: 'Event Photos' },
 ]
+
+export const EVENT_PHOTOS_LINK = {
+  label: 'Event Photos',
+  path: '/event-photos',
+}
 
 export const EVENT = {
   name: 'ETHack 2026',
@@ -52,9 +56,6 @@ export const TRACKS = [
   },
 ]
 
-// Tiers, pricing, and perks below match the official sponsorship deck
-// (ethack-2026-sponsorship-deck.pdf-v1.pdf, "Sponsorship Packages" page).
-// Keep this in sync if the deck changes.
 export const SPONSOR_TIERS = [
   {
     id: 'platinum',
@@ -108,7 +109,11 @@ export const AGENDA = [
       { time: '07:00–09:00', title: 'Breakfast' },
       { time: '12:00–13:00', title: 'Celebration Lunch' },
       { time: '13:00–14:30', title: 'Judging x Panel' },
-      { time: '14:30–15:30', title: 'Closing Ceremony', emphasis: true },
+      {
+        time: '14:30–15:30',
+        title: 'Closing Ceremony',
+        emphasis: true,
+      },
     ],
   },
 ]
@@ -132,7 +137,7 @@ export const FAQS = [
   {
     question: 'What does it cost to take part?',
     answer:
-      "Nothing. Selected participants attend for free. Meals, snacks, and a place to work for 24 hours are covered, thanks to our sponsors.",
+      'Nothing. Selected participants attend for free. Meals, snacks, and a place to work for 24 hours are covered, thanks to our sponsors.',
   },
   {
     question: 'What should I bring?',
@@ -197,5 +202,6 @@ export const TEAM = [
 
 export const CONTACT = {
   email: 'info@ethack.ch',
-  address: 'ETH Zürich, SOL B6 Sonneggstrasse 33, 8092 Zürich, Switzerland',
+  address:
+    'ETH Zürich, SOL B6 Sonneggstrasse 33, 8092 Zürich, Switzerland',
 }

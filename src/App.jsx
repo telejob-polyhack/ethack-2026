@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import { NAV_LINKS } from './data/content.js'
+
 import Navbar from './components/Navbar.jsx'
 import CircuitRail from './components/CircuitRail.jsx'
 import Home from './components/Home.jsx'
@@ -25,18 +27,49 @@ function updateSectionHash(id) {
   }
 }
 
-export default function App() {
+function HomePage() {
+  const location = useLocation()
   const [activeSection, setActiveSection] = useState('home')
   const [progress, setProgress] = useState(0)
 
-  // Keep the active nav item, the circuit rail, and the URL hash in sync
-  // with whichever main navigation section is currently in view.
+  /*
+   * If somebody arrives from /event-photos and the URL contains a
+   * homepage hash such as /#sponsors, scroll to that section after
+   * the homepage has mounted.
+   */
+  useEffect(() => {
+    if (!location.hash) {
+      return
+    }
+
+    const sectionId = location.hash.replace('#', '')
+
+    const timeout = window.setTimeout(() => {
+      const section = document.getElementById(sectionId)
+
+      if (section) {
+        section.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        })
+      }
+    }, 50)
+
+    return () => window.clearTimeout(timeout)
+  }, [location.hash])
+
+  /*
+   * Keep the active navbar item, circuit rail, and URL hash in sync
+   * with whichever homepage section is currently in view.
+   */
   useEffect(() => {
     const sections = NAV_LINKS.map((link) =>
       document.getElementById(link.id),
     ).filter(Boolean)
 
-    if (sections.length === 0) return undefined
+    if (sections.length === 0) {
+      return undefined
+    }
 
     function activateSection(id) {
       setActiveSection(id)
@@ -90,7 +123,10 @@ export default function App() {
     return () => observer.disconnect()
   }, [])
 
-  // Drive the circuit rail's fill amount off overall scroll position.
+  /*
+   * Drive the circuit rail fill amount from the overall homepage
+   * scroll position.
+   */
   useEffect(() => {
     function handleScroll() {
       const scrollable =
@@ -128,11 +164,63 @@ export default function App() {
           <FAQs />
           <Team />
           <Contact />
-          <EventPhotos />
         </main>
 
         <Footer />
       </div>
     </div>
+  )
+}
+
+function EventPhotosPage() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'auto',
+    })
+  }, [])
+
+  return (
+    <div className="min-h-screen bg-ink font-body text-paper">
+      <Navbar activeSection="event-photos" />
+
+      <main className="pt-14">
+        <EventPhotos />
+      </main>
+
+      <Footer />
+    </div>
+  )
+}
+
+function NotFoundPage() {
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-ink px-5 font-body text-paper">
+      <div className="text-center">
+        <p className="eyebrow text-xs text-sky">404</p>
+
+        <h1 className="mt-3 font-display text-4xl font-semibold">
+          Page not found.
+        </h1>
+
+        <a
+          href="/"
+          className="mt-8 inline-flex rounded-full bg-brand-gradient px-6 py-3 font-display text-sm font-semibold text-ink"
+        >
+          Back to ETHack
+        </a>
+      </div>
+    </div>
+  )
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/event-photos" element={<EventPhotosPage />} />
+      <Route path="*" element={<NotFoundPage />} />
+    </Routes>
   )
 }
