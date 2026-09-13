@@ -128,8 +128,6 @@ export default function App() {
           <FAQs />
           <Team />
           <Contact />
-
-          {/* Final section of the website */}
           <EventPhotos />
         </main>
 

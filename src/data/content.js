@@ -9,6 +9,7 @@ export const NAV_LINKS = [
   { id: 'faqs', label: 'FAQs' },
   { id: 'team', label: 'Team' },
   { id: 'contact', label: 'Contact' },
+  { id: 'event-photos', label: 'Event Photos' },
 ]
 
 export const EVENT = {
