@@ -8,13 +8,20 @@ import Agenda from './components/Agenda.jsx'
 import FAQs from './components/FAQs.jsx'
 import Team from './components/Team.jsx'
 import Contact from './components/Contact.jsx'
+import EventPhotos from './components/EventPhotos.jsx'
 import Footer from './components/Footer.jsx'
 
 function updateSectionHash(id) {
   const nextHash = id === 'home' ? '' : `#${id}`
+
   if (window.location.hash !== nextHash) {
     const base = window.location.pathname + window.location.search
-    window.history.replaceState(null, '', nextHash ? `${base}${nextHash}` : base)
+
+    window.history.replaceState(
+      null,
+      '',
+      nextHash ? `${base}${nextHash}` : base,
+    )
   }
 }
 
@@ -23,11 +30,11 @@ export default function App() {
   const [progress, setProgress] = useState(0)
 
   // Keep the active nav item, the circuit rail, and the URL hash in sync
-  // with whichever section is currently in view.
+  // with whichever main navigation section is currently in view.
   useEffect(() => {
-    const sections = NAV_LINKS.map((link) => document.getElementById(link.id)).filter(
-      Boolean,
-    )
+    const sections = NAV_LINKS.map((link) =>
+      document.getElementById(link.id),
+    ).filter(Boolean)
 
     if (sections.length === 0) return undefined
 
@@ -51,7 +58,11 @@ export default function App() {
       }
 
       handleLegacyScrollSpy()
-      window.addEventListener('scroll', handleLegacyScrollSpy, { passive: true })
+
+      window.addEventListener('scroll', handleLegacyScrollSpy, {
+        passive: true,
+      })
+
       window.addEventListener('resize', handleLegacyScrollSpy)
 
       return () => {
@@ -68,34 +79,47 @@ export default function App() {
           }
         })
       },
-      { rootMargin: '-35% 0px -55% 0px', threshold: 0 },
+      {
+        rootMargin: '-35% 0px -55% 0px',
+        threshold: 0,
+      },
     )
 
     sections.forEach((section) => observer.observe(section))
+
     return () => observer.disconnect()
   }, [])
 
   // Drive the circuit rail's fill amount off overall scroll position.
   useEffect(() => {
     function handleScroll() {
-      const scrollable = document.documentElement.scrollHeight - window.innerHeight
-      const ratio = scrollable > 0 ? window.scrollY / scrollable : 0
+      const scrollable =
+        document.documentElement.scrollHeight - window.innerHeight
+
+      const ratio =
+        scrollable > 0 ? window.scrollY / scrollable : 0
+
       setProgress(Math.min(1, Math.max(0, ratio)))
     }
+
     handleScroll()
-    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    window.addEventListener('scroll', handleScroll, {
+      passive: true,
+    })
+
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
     <div className="min-h-screen bg-ink font-body text-paper">
       <Navbar activeSection={activeSection} />
-      <CircuitRail activeSection={activeSection} progress={progress} />
-      {/* The circuit rail is fixed near the left edge and only shows at the
-          lg breakpoint, so reserve some room for it there specifically —
-          otherwise it crowds page content on screens just past 1024px,
-          before the centered max-w-7xl container's own margins grow large
-          enough to clear it on their own. */}
+
+      <CircuitRail
+        activeSection={activeSection}
+        progress={progress}
+      />
+
       <div className="lg:pl-28">
         <main>
           <Home />
@@ -104,7 +128,11 @@ export default function App() {
           <FAQs />
           <Team />
           <Contact />
+
+          {/* Final section of the website */}
+          <EventPhotos />
         </main>
+
         <Footer />
       </div>
     </div>

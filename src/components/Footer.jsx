@@ -14,6 +14,7 @@ export default function Footer() {
               className="h-full w-full object-contain"
             />
           </div>
+
           <span className="font-display text-sm font-semibold text-paper">
             <span className="text-sky">/26</span> · {EVENT.location}
           </span>
@@ -26,18 +27,27 @@ export default function Footer() {
                 href={link.id === 'home' ? '/' : `#${link.id}`}
                 onClick={
                   link.id === 'home'
-                    ? (e) => {
-                        e.preventDefault()
+                    ? (event) => {
+                        event.preventDefault()
                         goToSection('home')
                       }
                     : undefined
                 }
-                className="font-mono text-xs uppercase tracking-wide text-paper-dim hover:text-sky"
+                className="font-mono text-xs uppercase tracking-wide text-paper-dim transition-colors hover:text-sky"
               >
                 {link.label}
               </a>
             </li>
           ))}
+
+          <li>
+            <a
+              href="#event-photos"
+              className="font-mono text-xs uppercase tracking-wide text-paper-dim transition-colors hover:text-sky"
+            >
+              Event Photos
+            </a>
+          </li>
         </ul>
 
         <p className="font-mono text-xs text-paper-dim">
