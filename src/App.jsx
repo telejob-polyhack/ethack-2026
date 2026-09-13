@@ -10,7 +10,7 @@ import Agenda from './components/Agenda.jsx'
 import FAQs from './components/FAQs.jsx'
 import Team from './components/Team.jsx'
 import Contact from './components/Contact.jsx'
-import EventPhotos from './components/EventPhotos.jsx'
+import EventPhotos from './pages/EventPhotos.jsx'
 import Footer from './components/Footer.jsx'
 
 function updateSectionHash(id) {
