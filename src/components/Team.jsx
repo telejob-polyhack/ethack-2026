@@ -9,23 +9,24 @@ function initials(name) {
     .toUpperCase()
 }
 
-export default function Team() {
+export default function Team({ members = TEAM, archived = false }) {
   return (
     <section id="team" className="relative border-b border-line bg-ink py-24">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="max-w-2xl">
           <p className="eyebrow text-xs text-sky">Team</p>
           <h2 className="mt-3 font-display text-3xl font-semibold text-paper sm:text-4xl">
-            Run by students, for students.
+            {archived ? 'The team behind ETHack 2026.' : 'Run by students, for students.'}
           </h2>
           <p className="mt-4 text-paper-dim">
-            ETHack is organized entirely by a volunteer student team at ETH
-            Zürich.
+            {archived
+              ? 'ETHack 2026 was organized by this volunteer student team at ETH Zürich.'
+              : 'ETHack is organized entirely by a volunteer student team at ETH Zürich.'}
           </p>
         </div>
 
         <div className="mt-14 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
-          {TEAM.map((member, i) => (
+          {members.map((member, i) => (
             <div key={`${member.name}-${i}`} className="group text-center">
               {member.photo ? (
                 <div className="mx-auto h-24 w-24 overflow-hidden rounded-full transition-transform group-hover:scale-105 sm:h-28 sm:w-28">

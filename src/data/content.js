@@ -11,9 +11,9 @@ export const NAV_LINKS = [
   { id: 'contact', label: 'Contact' },
 ]
 
-export const EVENT_PHOTOS_LINK = {
-  label: 'Event Photos',
-  path: '/event-photos',
+export const EDITION_2026_LINK = {
+  label: '2026 Edition',
+  path: '/2026',
 }
 
 export const EVENT = {

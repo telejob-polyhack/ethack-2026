@@ -1,7 +1,7 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import {
   NAV_LINKS,
-  EVENT_PHOTOS_LINK,
+  EDITION_2026_LINK,
   EVENT,
 } from '../data/content.js'
 import { goToSection } from '../lib/navigation.js'
@@ -70,10 +70,10 @@ export default function Footer() {
 
           <li>
             <Link
-              to={EVENT_PHOTOS_LINK.path}
+              to={EDITION_2026_LINK.path}
               className="font-mono text-xs uppercase tracking-wide text-paper-dim transition-colors hover:text-sky"
             >
-              {EVENT_PHOTOS_LINK.label}
+              {EDITION_2026_LINK.label}
             </Link>
           </li>
         </ul>

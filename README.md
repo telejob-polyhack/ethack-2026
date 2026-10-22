@@ -66,3 +66,13 @@ public/
   page's signature element: a trace that fills with the brand gradient as
   you scroll and marks the current section, echoing the act of building
   and wiring something together.
+
+## Edition archive
+
+`/2026` holds the 2026 sponsor acknowledgements, event gallery, and organizing team.
+The former `/event-photos` URL redirects to `/2026`.
+
+Update the current homepage team in `src/data/content.js`. The archive uses a
+separate snapshot in `src/data/edition2026.js`, with copied team and sponsor
+images in `public/2026/`. Keep these historical files unchanged when preparing
+a new edition. The 56 event photos remain in `public/event_photos/`.
