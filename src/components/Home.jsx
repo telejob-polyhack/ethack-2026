@@ -28,9 +28,8 @@ export default function Home() {
             </p>
 
             <h1 className="mt-5 font-display text-[2.6rem] font-semibold leading-[1.05] tracking-tight text-paper text-balance sm:text-6xl lg:text-[4.2rem]">
-              Hack for{' '}
               <span className="bg-brand-gradient bg-clip-text text-transparent">
-                good.
+                {EVENT.theme}
               </span>
             </h1>
 
@@ -43,15 +42,12 @@ export default function Home() {
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
-              <a
-                href={EVENT.applyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-brand-gradient px-6 py-3 font-display text-sm font-semibold text-ink shadow-lg shadow-steel/25 transition-transform hover:scale-[1.03]"
+              <button type="button" disabled title="Applications are not open yet"
+                className="inline-flex items-center gap-2 rounded-full bg-brand-gradient px-6 py-3 font-display text-sm font-semibold text-ink shadow-lg shadow-steel/25 cursor-not-allowed opacity-60"
               >
                 Apply to hack
                 <ArrowRight size={16} />
-              </a>
+              </button>
 
               <a
                 href="#sponsors"
@@ -64,7 +60,7 @@ export default function Home() {
             {/* Application deadline notice */}
             <div className="mt-5 max-w-xl rounded-xl border border-sky/40 bg-sky/10 px-5 py-4">
               <p className="font-display text-sm font-bold text-paper sm:text-base">
-                Applications close September 11 at 12:00 noon.
+                Applications are not open yet. Check back for updates.
               </p>
             </div>
 
@@ -87,7 +83,7 @@ export default function Home() {
             <div className="w-72 animate-floatSlow sm:w-80">
               <img
                 src="/logo_white.png"
-                alt="ETHack 2026"
+                alt={EVENT.name}
                 className="h-auto w-full drop-shadow-[0_0_60px_rgba(77,129,167,0.35)]"
               />
             </div>
@@ -98,7 +94,7 @@ export default function Home() {
           <p className="eyebrow text-xs text-ember">The theme</p>
 
           <h2 className="mt-3 max-w-2xl font-display text-2xl font-semibold text-paper sm:text-3xl">
-            Under "hack for good", every team tackles a real problem.
+            Under "{EVENT.theme}", every team tackles a real problem.
           </h2>
 
           <p className="mt-4 max-w-2xl text-paper-dim">

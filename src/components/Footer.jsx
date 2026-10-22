@@ -11,6 +11,7 @@ export default function Footer() {
   const navigate = useNavigate()
 
   const isHomepage = location.pathname === '/'
+  const editionYear = location.pathname === EDITION_2026_LINK.path ? 2026 : EVENT.year
 
   function handleHomepageSection(event, sectionId) {
     event.preventDefault()
@@ -33,7 +34,7 @@ export default function Footer() {
         <Link
           to="/"
           className="flex items-center gap-2"
-          aria-label="ETHack 2026 home"
+          aria-label={`ETHack ${editionYear} home`}
         >
           <div className="h-5 w-[68px] shrink-0">
             <img
@@ -45,7 +46,7 @@ export default function Footer() {
           </div>
 
           <span className="font-display text-sm font-semibold text-paper">
-            <span className="text-sky">/26</span> · {EVENT.location}
+            <span className="text-sky">/{String(editionYear).slice(-2)}</span> · {EVENT.location}
           </span>
         </Link>
 

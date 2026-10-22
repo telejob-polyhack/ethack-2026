@@ -16,6 +16,7 @@ export default function Navbar({ activeSection }) {
 
   const isHomepage = location.pathname === '/'
   const isEdition2026Page = location.pathname === EDITION_2026_LINK.path
+  const editionYear = isEdition2026Page ? 2026 : EVENT.year
 
   function handleHomepageSection(event, sectionId) {
     event.preventDefault()
@@ -58,7 +59,7 @@ export default function Navbar({ activeSection }) {
             setOpen(false)
           }}
           className="flex shrink-0 items-center gap-1.5"
-          aria-label="ETHack 2026, back to home"
+          aria-label={`ETHack ${editionYear}, back to home`}
         >
           <img
             src="/logo_colored.png"
@@ -68,7 +69,7 @@ export default function Navbar({ activeSection }) {
           />
 
           <span className="font-display text-lg font-semibold tracking-tight text-sky">
-            /26
+            /{String(editionYear).slice(-2)}
           </span>
         </Link>
 
@@ -110,14 +111,11 @@ export default function Navbar({ activeSection }) {
           </li>
         </ul>
 
-        {!isEdition2026Page && <a
-          href={EVENT.applyUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden rounded-full bg-brand-gradient px-5 py-2 font-display text-sm font-semibold text-ink shadow-lg shadow-steel/20 transition-transform hover:scale-[1.03] md:inline-block"
+        {!isEdition2026Page && <button type="button" disabled title="Applications are not open yet"
+          className="hidden rounded-full bg-brand-gradient px-5 py-2 font-display text-sm font-semibold text-ink shadow-lg shadow-steel/20 cursor-not-allowed opacity-60 md:inline-block"
         >
           Apply to hack
-        </a>}
+        </button>}
 
         {/* Mobile menu button */}
         <button
@@ -172,15 +170,11 @@ export default function Navbar({ activeSection }) {
             </li>
 
             {!isEdition2026Page && <li className="pt-2">
-              <a
-                href={EVENT.applyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setOpen(false)}
-                className="block rounded-full bg-brand-gradient px-5 py-2.5 text-center font-display text-sm font-semibold text-ink"
+              <button type="button" disabled title="Applications are not open yet"
+                className="block w-full cursor-not-allowed rounded-full opacity-60 bg-brand-gradient px-5 py-2.5 text-center font-display text-sm font-semibold text-ink"
               >
                 Apply to hack
-              </a>
+              </button>
             </li>}
           </ul>
         </div>
