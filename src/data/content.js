@@ -1,4 +1,4 @@
-// Central content for the ETHack 2026 site.
+// Central content for the current ETHack edition.
 // Edit this file to update copy, schedule, FAQs, team, and sponsorship tiers
 // without touching component markup.
 
@@ -11,25 +11,25 @@ export const NAV_LINKS = [
   { id: 'contact', label: 'Contact' },
 ]
 
-export const EVENT_PHOTOS_LINK = {
-  label: 'Event Photos',
-  path: '/event-photos',
+export const EDITION_2026_LINK = {
+  label: '2026 Edition',
+  path: '/2026',
 }
 
 export const EVENT = {
-  name: 'ETHack 2026',
-  theme: 'Hack for Good',
-  dateLong: 'September 12–13, 2026',
-  dateShort: 'Sep 12–13',
+  name: 'ETHack 2027',
+  year: 2027,
+  theme: 'Resilient Futures',
+  dateLong: '2027 · Dates to be announced',
+  dateShort: 'To be announced',
   location: 'ETH Zürich',
-  applyUrl: 'https://luma.com/eypyeily',
-  sponsorDeckUrl: '/ethack-2026-sponsorship-deck-v1.pdf',
+  sponsorDeckUrl: '/ethack-2027-sponsorship-deck-v1.pdf',
 }
 
 export const STATS = [
   { value: '100', label: 'students selected' },
   { value: '24', label: 'hours, start to finish' },
-  { value: '1', label: 'theme: hack for good' },
+  { value: '1', label: 'theme: Resilient Futures' },
   { value: '4+', label: 'tracks to build in' },
 ]
 
@@ -52,7 +52,7 @@ export const TRACKS = [
   {
     title: 'Beyond',
     description:
-      "Don't see your idea above? Hack for good takes many shapes. Bring the problem you care about and we'll help you scope it.",
+      "Don't see your idea above? Resilient Futures takes many shapes. Bring the problem you care about and we'll help you scope it.",
   },
 ]
 
@@ -61,6 +61,7 @@ export const SPONSOR_TIERS = [
     id: 'platinum',
     name: 'Platinum',
     price: 'CHF 10,000',
+    earlyBirdPrice: 'CHF 7,000',
     note: 'Limited spots',
     tagline: 'Set the challenge, judge the finals, own the room.',
     style: 'platinum',
@@ -78,6 +79,7 @@ export const SPONSOR_TIERS = [
     id: 'gold',
     name: 'Gold',
     price: 'CHF 5,000',
+    earlyBirdPrice: 'CHF 3,500',
     tagline: 'Strong visibility with hands-on access to participants.',
     style: 'gold',
     perks: [
@@ -89,40 +91,14 @@ export const SPONSOR_TIERS = [
   },
 ]
 
-export const AGENDA = [
-  {
-    day: 'Day 1',
-    date: 'Saturday, September 12',
-    items: [
-      { time: '10:00–10:30', title: 'Registration' },
-      { time: '10:30–12:00', title: 'Opening Ceremony' },
-      { time: '12:00', title: 'Start of hacking', emphasis: true },
-      { time: '12:00–13:30', title: 'Networking Lunch' },
-      { time: '14:30', title: 'Partner Talks' },
-      { time: '18:00–20:00', title: 'Networking Dinner' },
-    ],
-  },
-  {
-    day: 'Day 2',
-    date: 'Sunday, September 13',
-    items: [
-      { time: '07:00–09:00', title: 'Breakfast' },
-      { time: '12:00–13:00', title: 'Celebration Lunch' },
-      { time: '13:00–14:30', title: 'Judging x Panel' },
-      {
-        time: '14:30–15:30',
-        title: 'Closing Ceremony',
-        emphasis: true,
-      },
-    ],
-  },
-]
+// Add the confirmed 2027 schedule here when it is available.
+export const AGENDA = []
 
 export const FAQS = [
   {
     question: 'Who can take part?',
     answer:
-      "ETHack is open to students from ETH Zürich and the ETH Domain (ETH Zurich, EPFL, Eawag, WSL, Empa and PSI). We select 100 participants from across disciplines, not just computer science, since 'hack for good' needs designers, engineers, scientists, and humanities students working together.",
+      "ETHack is open to students from ETH Zürich and the ETH Domain (ETH Zurich, EPFL, Eawag, WSL, Empa and PSI). We select 100 participants from across disciplines, not just computer science, since 'Resilient Futures' needs designers, engineers, scientists, and humanities students working together.",
   },
   {
     question: 'Do I need to know how to code?',
@@ -147,7 +123,7 @@ export const FAQS = [
   {
     question: 'How are projects judged?',
     answer:
-      "On impact, technical execution, and how well the project fits the 'hack for good' theme. A jury of sponsors, faculty, and alumni reviews top teams after the project expo.",
+      "On impact, technical execution, and how well the project fits the 'Resilient Futures' theme. A jury of sponsors, faculty, and alumni reviews top teams after the project expo.",
   },
   {
     question: 'Is there a code of conduct?',

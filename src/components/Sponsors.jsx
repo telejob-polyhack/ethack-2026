@@ -38,51 +38,6 @@ export default function Sponsors() {
           </p>
         </div>
 
-        {/* Current sponsors */}
-        <div className="mt-14">
-          {/* Platinum sponsors */}
-          <div>
-            <p className="eyebrow text-xs text-paper-dim">
-              Platinum Sponsors
-            </p>
-
-            <div className="mt-8 flex flex-wrap items-center gap-6">
-              <div className="flex h-40 w-full items-center justify-center rounded-2xl border border-paper-dim/30 bg-white px-8 py-4 sm:w-[640px]">
-                <img
-                  src="/citadel.png"
-                  alt="Citadel"
-                  className="h-auto w-full max-w-[540px] object-contain"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Other sponsors */}
-          <div className="mt-12">
-            <p className="eyebrow text-xs text-paper-dim">
-              Other Sponsors
-            </p>
-
-            <div className="mt-6 flex flex-wrap items-center gap-6">
-              <div className="flex min-h-28 w-full items-center justify-center rounded-2xl border border-line bg-white p-6 sm:w-64">
-                <img
-                  src="/focus_water.svg"
-                  alt="Focus Water"
-                  className="max-h-16 max-w-full object-contain"
-                />
-              </div>
-
-              <div className="flex min-h-28 w-full items-center justify-center rounded-2xl border border-line bg-white p-6 sm:w-64">
-                <img
-                  src="/alba.png"
-                  alt="ALBA"
-                  className="max-h-16 max-w-full object-contain"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Sponsorship packages */}
         <div className="mt-20 grid gap-6 sm:grid-cols-2">
           {SPONSOR_TIERS.map((tier) => {
@@ -107,11 +62,19 @@ export default function Sponsors() {
                   )}
                 </div>
 
-                <p
-                  className={`mt-5 font-display text-3xl font-semibold ${style.price}`}
-                >
-                  {tier.price}
-                </p>
+                <div className="mt-5">
+                  <p className="font-display text-lg text-paper-dim">
+                    <span className="sr-only">Regular price: </span>
+                    <s>{tier.price}</s>
+                  </p>
+                  <p className={`mt-1 font-display text-3xl font-semibold ${style.price}`}>
+                    <span className="sr-only">Early bird price: </span>
+                    {tier.earlyBirdPrice}
+                  </p>
+                  <p className="mt-2 text-sm text-sky">
+                    Early bird discount until November 30, 2026
+                  </p>
+                </div>
 
                 <h3
                   className={`mt-2 font-display text-base font-medium ${style.heading}`}

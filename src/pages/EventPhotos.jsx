@@ -163,7 +163,8 @@ export default function EventPhotos() {
   return (
     <>
       <section
-        className="relative min-h-screen bg-ink pb-24 pt-16"
+        id="photos"
+        className="relative bg-ink py-24"
       >
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="max-w-2xl">

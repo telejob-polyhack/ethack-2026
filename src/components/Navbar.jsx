@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import {
   NAV_LINKS,
-  EVENT_PHOTOS_LINK,
+  EDITION_2026_LINK,
   EVENT,
 } from '../data/content.js'
 import { goToSection } from '../lib/navigation.js'
@@ -15,7 +15,8 @@ export default function Navbar({ activeSection }) {
   const navigate = useNavigate()
 
   const isHomepage = location.pathname === '/'
-  const isEventPhotosPage = location.pathname === EVENT_PHOTOS_LINK.path
+  const isEdition2026Page = location.pathname === EDITION_2026_LINK.path
+  const editionYear = isEdition2026Page ? 2026 : EVENT.year
 
   function handleHomepageSection(event, sectionId) {
     event.preventDefault()
@@ -31,7 +32,7 @@ export default function Navbar({ activeSection }) {
     }
 
     /*
-     * If we are on /event-photos, return to the homepage with the
+     * If we are on /2026, return to the homepage with the
      * correct hash. HomePage will scroll to it after mounting.
      */
     if (sectionId === 'home') {
@@ -58,7 +59,7 @@ export default function Navbar({ activeSection }) {
             setOpen(false)
           }}
           className="flex shrink-0 items-center gap-1.5"
-          aria-label="ETHack 2026, back to home"
+          aria-label={`ETHack ${editionYear}, back to home`}
         >
           <img
             src="/logo_colored.png"
@@ -68,7 +69,7 @@ export default function Navbar({ activeSection }) {
           />
 
           <span className="font-display text-lg font-semibold tracking-tight text-sky">
-            /26
+            /{String(editionYear).slice(-2)}
           </span>
         </Link>
 
@@ -98,26 +99,23 @@ export default function Navbar({ activeSection }) {
 
           <li>
             <Link
-              to={EVENT_PHOTOS_LINK.path}
+              to={EDITION_2026_LINK.path}
               className={`eyebrow text-[11px] transition-colors ${
-                isEventPhotosPage
+                isEdition2026Page
                   ? 'text-sky'
                   : 'text-paper-dim hover:text-paper'
               }`}
             >
-              {EVENT_PHOTOS_LINK.label}
+              {EDITION_2026_LINK.label}
             </Link>
           </li>
         </ul>
 
-        <a
-          href={EVENT.applyUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden rounded-full bg-brand-gradient px-5 py-2 font-display text-sm font-semibold text-ink shadow-lg shadow-steel/20 transition-transform hover:scale-[1.03] md:inline-block"
+        {!isEdition2026Page && <button type="button" disabled title="Applications are not open yet"
+          className="hidden rounded-full bg-brand-gradient px-5 py-2 font-display text-sm font-semibold text-ink shadow-lg shadow-steel/20 cursor-not-allowed opacity-60 md:inline-block"
         >
           Apply to hack
-        </a>
+        </button>}
 
         {/* Mobile menu button */}
         <button
@@ -159,29 +157,25 @@ export default function Navbar({ activeSection }) {
 
             <li>
               <Link
-                to={EVENT_PHOTOS_LINK.path}
+                to={EDITION_2026_LINK.path}
                 onClick={() => setOpen(false)}
                 className={`block rounded-md px-2 py-2.5 font-body text-base ${
-                  isEventPhotosPage
+                  isEdition2026Page
                     ? 'text-sky'
                     : 'text-paper-dim hover:text-paper'
                 }`}
               >
-                {EVENT_PHOTOS_LINK.label}
+                {EDITION_2026_LINK.label}
               </Link>
             </li>
 
-            <li className="pt-2">
-              <a
-                href={EVENT.applyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setOpen(false)}
-                className="block rounded-full bg-brand-gradient px-5 py-2.5 text-center font-display text-sm font-semibold text-ink"
+            {!isEdition2026Page && <li className="pt-2">
+              <button type="button" disabled title="Applications are not open yet"
+                className="block w-full cursor-not-allowed rounded-full opacity-60 bg-brand-gradient px-5 py-2.5 text-center font-display text-sm font-semibold text-ink"
               >
                 Apply to hack
-              </a>
-            </li>
+              </button>
+            </li>}
           </ul>
         </div>
       )}

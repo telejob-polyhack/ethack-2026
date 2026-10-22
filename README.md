@@ -1,7 +1,6 @@
 # ETHack 2026 — Website
 
-A single-page React site for ETHack 2026, the "Hack for Good" student
-hackathon at ETH Zürich, September 12–13, 2026.
+A React site for ETHack at ETH Zürich. The current theme is "Resilient Futures"; the 2026 edition, "Hack for Good," is preserved at `/2026`.
 
 The page is one long scroll with six sections, each addressable as a URL
 anchor: `#home`, `#sponsors`, `#agenda`, `#faqs`, `#team`, `#contact`. The
@@ -32,7 +31,7 @@ src/
   components/
     Navbar.jsx         // top nav, active-section highlight, mobile menu
     CircuitRail.jsx     // left-edge scroll progress / quick-nav rail
-    Home.jsx             // hero + "hack for good" theme + tracks (#home)
+    Home.jsx             // hero + "Resilient Futures" theme + tracks (#home)
     Sponsors.jsx        // Premium / Gold / Community tiers (#sponsors)
     Agenda.jsx           // two-day schedule timeline (#agenda)
     FAQs.jsx              // accordion (#faqs)
@@ -66,3 +65,13 @@ public/
   page's signature element: a trace that fills with the brand gradient as
   you scroll and marks the current section, echoing the act of building
   and wiring something together.
+
+## Edition archive
+
+`/2026` holds the 2026 sponsor acknowledgements, event gallery, and organizing team.
+The former `/event-photos` URL redirects to `/2026`.
+
+Update the current homepage team in `src/data/content.js`. The archive uses a
+separate snapshot in `src/data/edition2026.js`, with copied team and sponsor
+images in `public/2026/`. Keep these historical files unchanged when preparing
+a new edition. The 56 event photos remain in `public/event_photos/`.

@@ -1,6 +1,23 @@
 import { AGENDA } from '../data/content.js'
 
 export default function Agenda() {
+  if (AGENDA.length === 0) {
+    return (
+      <section id="agenda" className="relative border-b border-line bg-ink py-24">
+        <div className="mx-auto max-w-7xl px-5 md:px-8">
+          <p className="eyebrow text-xs text-sky">Agenda</p>
+          <h2 className="mt-3 font-display text-3xl font-semibold text-paper sm:text-4xl">
+            2027 dates and schedule to be announced.
+          </h2>
+          <p className="mt-4 max-w-2xl text-paper-dim">
+            We’re planning the next edition of ETHack. Check back for the
+            confirmed event dates and full schedule.
+          </p>
+        </div>
+      </section>
+    )
+  }
+
   return (
     <section id="agenda" className="relative border-b border-line bg-ink py-24">
       <div className="mx-auto max-w-7xl px-5 md:px-8">

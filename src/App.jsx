@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { NAV_LINKS } from './data/content.js'
 
 import Navbar from './components/Navbar.jsx'
@@ -10,7 +10,7 @@ import Agenda from './components/Agenda.jsx'
 import FAQs from './components/FAQs.jsx'
 import Team from './components/Team.jsx'
 import Contact from './components/Contact.jsx'
-import EventPhotos from './pages/EventPhotos.jsx'
+import Edition2026 from './pages/Edition2026.jsx'
 import Footer from './components/Footer.jsx'
 
 function updateSectionHash(id) {
@@ -172,21 +172,31 @@ function HomePage() {
   )
 }
 
-function EventPhotosPage() {
+function Edition2026Page() {
+  const location = useLocation()
+
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'auto',
+    const frame = window.requestAnimationFrame(() => {
+      const section = location.hash
+        ? document.getElementById(location.hash.slice(1))
+        : null
+
+      if (section) {
+        section.scrollIntoView({ behavior: 'auto', block: 'start' })
+      } else {
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+      }
     })
-  }, [])
+
+    return () => window.cancelAnimationFrame(frame)
+  }, [location.hash])
 
   return (
     <div className="min-h-screen bg-ink font-body text-paper">
-      <Navbar activeSection="event-photos" />
+      <Navbar activeSection="2026" />
 
       <main className="pt-14">
-        <EventPhotos />
+        <Edition2026 />
       </main>
 
       <Footer />
@@ -219,7 +229,8 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/event-photos" element={<EventPhotosPage />} />
+      <Route path="/2026" element={<Edition2026Page />} />
+      <Route path="/event-photos" element={<Navigate to="/2026" replace />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   )
