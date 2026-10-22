@@ -62,11 +62,19 @@ export default function Sponsors() {
                   )}
                 </div>
 
-                <p
-                  className={`mt-5 font-display text-3xl font-semibold ${style.price}`}
-                >
-                  {tier.price}
-                </p>
+                <div className="mt-5">
+                  <p className="font-display text-lg text-paper-dim">
+                    <span className="sr-only">Regular price: </span>
+                    <s>{tier.price}</s>
+                  </p>
+                  <p className={`mt-1 font-display text-3xl font-semibold ${style.price}`}>
+                    <span className="sr-only">Early bird price: </span>
+                    {tier.earlyBirdPrice}
+                  </p>
+                  <p className="mt-2 text-sm text-sky">
+                    Early bird discount until November 30, 2026
+                  </p>
+                </div>
 
                 <h3
                   className={`mt-2 font-display text-base font-medium ${style.heading}`}

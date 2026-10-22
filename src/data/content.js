@@ -23,7 +23,7 @@ export const EVENT = {
   dateShort: 'Sep 12–13',
   location: 'ETH Zürich',
   applyUrl: 'https://luma.com/eypyeily',
-  sponsorDeckUrl: '/ethack-2026-sponsorship-deck-v1.pdf',
+  sponsorDeckUrl: '/ethack-2027-sponsorship-deck-v1.pdf',
 }
 
 export const STATS = [
@@ -61,6 +61,7 @@ export const SPONSOR_TIERS = [
     id: 'platinum',
     name: 'Platinum',
     price: 'CHF 10,000',
+    earlyBirdPrice: 'CHF 7,000',
     note: 'Limited spots',
     tagline: 'Set the challenge, judge the finals, own the room.',
     style: 'platinum',
@@ -78,6 +79,7 @@ export const SPONSOR_TIERS = [
     id: 'gold',
     name: 'Gold',
     price: 'CHF 5,000',
+    earlyBirdPrice: 'CHF 3,500',
     tagline: 'Strong visibility with hands-on access to participants.',
     style: 'gold',
     perks: [
